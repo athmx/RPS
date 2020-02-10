@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissor</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    
+    function computerPlay(){ /*Random RPS generator*/
+        let rndm = Math.random();
+        
+        if (rndm <= 0.33){
+            return "rock";
+        }
+        
+        else if (rndm > 0.33 && rndm < 0.66){ 
+            return "paper";
+        }
+        
+        else {
+            return "scissors";
+        }
+          
+    } 
+      
+    function userPlay(){ /*Ask user to enter RPS*/
+        return prompt("Enter Rock, Paper or Scissors").toLocaleLowerCase(); 
+    }
+    
+    let computerSelection = computerPlay();  
+    let playerSelection = userPlay();   
+    
+    function whoWins() { /*One round of RPS*/
+        
+        if (playerSelection === computerSelection) {
+            return "Tie";
+        }
+        else if (playerSelection === "rock"){ 
+             if (computerSelection === "paper") {
+                 return "Computer wins";
+             }
+            else { 
+                 return "Player wins";
+            }
+        }
+        else if (playerSelection === "paper"){
+            if (computerSelection === "rock"){
+                return "Player wins";
+            }
+            else { 
+                return "Computer wins";
+            }
+        }
+        else if (playerSelection === "scissors") {
+            if (computerSelection === "rock"){
+                return "Computer wins";
+            }
+            else {
+                return "Player wins";
+            }
+        }
+            
+        
+    }
+    
+    let winnerResults = whoWins();
+      
+    console.log(computerSelection);
+    console.log(playerSelection);
+    console.log(winnerResults);
+            
+            
+  </script>
+</body>
+</html>
